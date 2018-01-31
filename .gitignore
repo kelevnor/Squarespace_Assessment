@@ -1,0 +1,7 @@
+gradlew.bat
+.gradle/
+gradlew.bat
+.DS_Store
+*.ipr
+
+.idea/
