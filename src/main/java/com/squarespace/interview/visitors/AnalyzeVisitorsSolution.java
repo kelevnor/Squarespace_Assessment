@@ -14,13 +14,19 @@ class AnalyzeVisitorsSolution {
    *
    * @param websiteVisits Input hit data.
    * @return A 3-element array of long corresponding to 0: page views, 1: unique visitors, 2: view sessions
+   *
+   * Marios Sifalakis -
    */
   @SuppressWarnings("UnusedParameters")
   static long[] processPageViews(Iterable<WebsiteVisit> websiteVisits) {
-    return new long[]{getCount(websiteVisits), getUniqueVisitors(websiteVisits), getSessions(websiteVisits)};
+    long pageViews = getCount(websiteVisits);
+    long uniqueVisitors = getUniqueVisitors(websiteVisits);
+    long viewSessions = getSessions(websiteVisits);
+    return new long[]{pageViews, uniqueVisitors, viewSessions};
   }
 
 
+  //Method to count the page views from the Iterable provided
   static long getCount(Iterable<WebsiteVisit> websiteVisits){
     Iterator<WebsiteVisit> iter = websiteVisits.iterator();
     long counter = 0;
@@ -30,6 +36,7 @@ class AnalyzeVisitorsSolution {
     return counter;
   }
 
+  //Method to count unique user visits from the Iterable provided
   static long getUniqueVisitors(Iterable<WebsiteVisit> websiteVisits){
     Iterator<WebsiteVisit> iter = websiteVisits.iterator();
     List<String> uniqueVisitorsList = new ArrayList<>();
@@ -42,6 +49,7 @@ class AnalyzeVisitorsSolution {
     return (long)uniqueVisitorsList.size();
   }
 
+  //Method to get unique sessions of the users returned in the Iterable provided
   static long getSessions(Iterable<WebsiteVisit> websiteVisits){
     List<String> nameIndex = new ArrayList<>();
     List<WebsiteVisit> visitorsList = new ArrayList<>();
