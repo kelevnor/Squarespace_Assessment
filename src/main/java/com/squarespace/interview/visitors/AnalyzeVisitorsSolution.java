@@ -15,7 +15,7 @@ class AnalyzeVisitorsSolution {
    * @param websiteVisits Input hit data.
    * @return A 3-element array of long corresponding to 0: page views, 1: unique visitors, 2: view sessions
    *
-   * Marios Sifalakis -
+   *
    */
   @SuppressWarnings("UnusedParameters")
   static long[] processPageViews(Iterable<WebsiteVisit> websiteVisits) {

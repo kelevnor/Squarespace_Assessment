@@ -29,8 +29,8 @@ public class FindPointSolution {
     list.add(n);
     for (Node temp : n.getChildren()) {
       if (temp.getChildren().size() > 0) {
-        list.add(temp);
         if (isContained(temp, p)) {
+          list.add(temp);
           return list;
         } else {
           getAllNodesForPoint(temp, p, list);
