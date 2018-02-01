@@ -15,11 +15,11 @@ public class FindPointSolution {
    * @param rootNode Top-level node of the view hierarchy.
    * @param toFind An x,y coordinate to be located.
    * @return An ordered rdered list of {@link Node#id}
-   * Marios Sifalakis - Modified it to return emtpy LinkedList if point is not contained
+   * Marios Sifalakis - Modified it to return root node if point is not contained
    * and kept and returned the LinkedList to show the node path for the point if found.
    */
   @SuppressWarnings("UnusedParameters")
-  public static List<String> findPathToNode(Node rootNode, Point toFind) {
+  public static LinkedList<Node> findPathToNode(Node rootNode, Point toFind) {
     // @ToDo Implement this routine
     LinkedList<Node> nodeList = new LinkedList();
     return getAllNodesForPoint(rootNode, toFind, nodeList);
@@ -29,6 +29,7 @@ public class FindPointSolution {
     list.add(n);
     for (Node temp : n.getChildren()) {
       if (temp.getChildren().size() > 0) {
+        list.add(temp);
         if (isContained(temp, p)) {
           return list;
         } else {
@@ -36,7 +37,7 @@ public class FindPointSolution {
         }
       } else {
         list = new LinkedList<>();
-        return list;
+        list.add(n);
       }
     }
     list = new LinkedList<>();
