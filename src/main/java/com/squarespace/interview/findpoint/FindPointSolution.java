@@ -25,6 +25,9 @@ public class FindPointSolution {
     return getAllNodesForPoint(rootNode, toFind, nodeList);
   }
 
+  //Recursive function to loop through all nodes of tree and return empty LinkedList
+  // if point not found or NOT Empty with the path to the point, if point is found
+
   static LinkedList getAllNodesForPoint(Node n, Point p, LinkedList<Node> list) {
     list.add(n);
     for (Node temp : n.getChildren()) {
